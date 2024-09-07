@@ -12,5 +12,11 @@ Clone the repo and then:
 
 ``` $npm run start:game```
 
- 
 Go to http://localhost:3000/  and have fun. 
+
+## Docker
+```
+docker buildx create --name builder --bootstrap --use
+docker buildx build --platform linux/amd64,linux/arm64 -t DOCKERHUB_USERNAME/multiplayer-game --push .
+docker run -d -p 3000:3000 DOCKERHUB_USERNAME/multiplayer-game
+```
